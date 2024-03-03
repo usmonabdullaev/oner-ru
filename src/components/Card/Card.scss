@@ -1,0 +1,112 @@
+.card {
+  width: 300px;
+  height: 410px;
+  border: 1px solid #f4f5f6;
+  border-radius: 10px;
+  padding: 0px 20px;
+
+  &:hover {
+    box-shadow: 0 4px 20px 0 #00000012;
+  }
+
+  &__img {
+    user-select: none;
+  }
+
+  &__info-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__id {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #7a7680;
+  }
+
+  &__rating-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    span {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: #1c1d1e;
+    }
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1b1d1f;
+    margin-bottom: 40px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    color: #1b1d1f;
+
+    sup {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: #7a7680;
+      margin-left: 10px;
+    }
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #5946d7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &_active {
+      background-color: #5946d7;
+      path {
+        stroke: #fff;
+      }
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}

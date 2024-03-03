@@ -1,0 +1,60 @@
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 60px;
+
+  &__item {
+    width: 400px;
+    height: 250px;
+    background-color: #e8edfa;
+    background-image: url(../../assets/images/links-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #1b1d1f;
+    max-width: 160px;
+    padding: 30px;
+  }
+
+  &__group {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #5946d7;
+    width: 130px;
+    height: 40px;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        transform: translateX(-20%);
+      }
+    }
+
+    svg {
+      transition: 0.2s;
+    }
+  }
+
+  &__link {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+  }
+}
