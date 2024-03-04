@@ -4,6 +4,7 @@ import headerReducer from "./slices/headerSlice.ts";
 import navigationReducer from "./slices/navigationSlice.ts";
 import cartReducer from "./slices/cartSlice.ts";
 import dataReducer from "./slices/dataSlice.ts";
+import filterReducer from "./slices/filterSlice.ts";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     navigation: navigationReducer,
     cart: cartReducer,
     data: dataReducer,
+    filter: filterReducer,
   },
 });
 

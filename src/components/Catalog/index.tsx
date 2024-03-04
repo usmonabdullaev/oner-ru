@@ -13,6 +13,7 @@ import "./Catalog.scss";
 
 const Catalog: FC = () => {
   const [pageNumber, setPageNumber] = useState(0);
+  const filterValue = useAppSelector((state) => state.filter.value);
   const data = useAppSelector((state) => state.data.value);
   const dispatch = useAppDispatch();
 
@@ -40,7 +41,13 @@ const Catalog: FC = () => {
                 const start = (pageNumber + 1) * 15 - 15;
                 const end = (pageNumber + 1) * 15 + 1;
                 if (i.id > start && i.id < end)
-                  return <CatalogCard props={i} key={i.id} />;
+                  if (filterValue === "") {
+                    return <CatalogCard props={i} key={i.id} />;
+                  } else if (filterValue.split("-").includes(i.name)) {
+                    
+                    return <CatalogCard props={i} key={i.id} />;
+                  }
+
                 return null;
               })}
             </div>

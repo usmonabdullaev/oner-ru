@@ -1,5 +1,8 @@
 import React, { FC, useState } from "react";
 
+import { useAppSelector, useAppDispatch } from "../../redux/hooks.ts";
+import { setFilter } from "../../redux/slices/filterSlice.ts";
+
 interface PropTypes {
   props: {
     name: string;
@@ -10,6 +13,8 @@ interface PropTypes {
 }
 
 const FilterItem: FC<PropTypes> = ({ props }) => {
+  const filterValue = useAppSelector((state) => state.filter.value);
+  const dispatch = useAppDispatch();
   const { name, type, values, search } = props;
   const [opened, setOpened] = useState(true);
 
@@ -49,9 +54,26 @@ const FilterItem: FC<PropTypes> = ({ props }) => {
           <div key={index} className="filter-item__checkbox">
             <i
               className="filter-item__checkbox-item"
-              onClick={(e: any) =>
-                e.target.classList.toggle("filter-item__checkbox-item_active")
-              }
+              onClick={(e: any) => {
+                e.target.classList.toggle("filter-item__checkbox-item_active");
+                console.log(filterValue);
+                name === "Бренд" &&
+                e.target.classList.value.includes(
+                  "filter-item__checkbox-item_active"
+                )
+                  ? !filterValue.includes(i) &&
+                    dispatch(setFilter((filterValue + "-" + i).trim()))
+                  : dispatch(
+                      setFilter(
+                        filterValue
+                          .split("-")
+                          .filter((j) => j !== i)
+                          .join("-")
+                          .trim()
+                      )
+                    );
+                console.log(filterValue);
+              }}
             >
               +
             </i>
