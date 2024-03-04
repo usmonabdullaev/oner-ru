@@ -41,13 +41,10 @@ const Catalog: FC = () => {
                 const start = (pageNumber + 1) * 15 - 15;
                 const end = (pageNumber + 1) * 15 + 1;
                 if (i.id > start && i.id < end)
-                  if (filterValue === "") {
+                  if (filterValue === "")
                     return <CatalogCard props={i} key={i.id} />;
-                  } else if (filterValue.split("-").includes(i.name)) {
-                    
+                  else if (filterValue.split("-").includes(i.name))
                     return <CatalogCard props={i} key={i.id} />;
-                  }
-
                 return null;
               })}
             </div>
